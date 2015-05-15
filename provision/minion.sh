@@ -10,4 +10,4 @@ fi
 
 cp -f /vagrant/provision/salt/minion /etc/salt/minion
 
-/etc/init.d/salt-minion restart
+#/etc/init.d/salt-minion restart

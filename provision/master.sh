@@ -11,5 +11,8 @@ fi
 cp -f /vagrant/provision/salt/master /etc/salt/master
 cp -f /vagrant/provision/salt/minion /etc/salt/minion
 
-/etc/init.d/salt-master restart
-/etc/init.d/salt-minion restart
+ln -s /vagrant/saltstack/salt /srv/salt
+ln -s /vagrant/saltstack/pillar /srv/pillar
+
+#/etc/init.d/salt-master restart
+#/etc/init.d/salt-minion restart
