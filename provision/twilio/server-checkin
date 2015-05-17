@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Load Config
+. /vagrant/twilio-config
+
+HOSTNAME=$(cat /etc/hostname)
+IPADDRESSES=$(ifconfig | awk '/inet addr/{print substr($2,6)}' | grep -v "^127\." | grep -v "^172\.")
+
+echo "Server $HOSTNAME on $IPADDRESSES is still online" | bash /vagrant/provision/twilio/twilio-sms -c /vagrant/twilio-config $SENDNUMBER
