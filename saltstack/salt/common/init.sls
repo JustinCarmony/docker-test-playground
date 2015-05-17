@@ -6,6 +6,7 @@ common-packages:
             - git-core
             - vim
             - curl
+            - python-setuptools
     pip.installed:
         - names:
             - docker-py

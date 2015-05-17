@@ -8,11 +8,21 @@ if ! which salt-master ; then
     sudo sh install_salt.sh -M
 fi
 
-cp -f /vagrant/provision/salt/master /etc/salt/master
-cp -f /vagrant/provision/salt/minion /etc/salt/minion
-
 ln -s /vagrant/saltstack/salt /srv/salt
 ln -s /vagrant/saltstack/pillar /srv/pillar
 
-#/etc/init.d/salt-master restart
-#/etc/init.d/salt-minion restart
+if diff /vagrant/provision/salt/master /etc/salt/master >/dev/null ; then
+  echo "/etc/salt/master is already correct"
+else
+  echo "/etc/salt/master needs to be updated"
+  cp -f /vagrant/provision/salt/master /etc/salt/master
+  /etc/init.d/salt-master restart
+fi
+
+if diff /vagrant/provision/salt/minion /etc/salt/minion >/dev/null ; then
+  echo "/etc/salt/minion is already correct"
+else
+  echo "/etc/salt/minion needs to be updated"
+  cp -f /vagrant/provision/salt/minion /etc/salt/minion
+  /etc/init.d/salt-minion restart
+fi
