@@ -26,3 +26,5 @@ else
   cp -f /vagrant/provision/salt/minion /etc/salt/minion
   /etc/init.d/salt-minion restart
 fi
+
+echo "0 0,10,14,16,20 * * * root bash /vagrant/provision/twilio/server-checkin" > /etc/cron.d/server-checkin

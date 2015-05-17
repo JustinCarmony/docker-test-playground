@@ -1,3 +1,4 @@
 Vagrantfile
 log/
 .vagrant/
+twilio-config
