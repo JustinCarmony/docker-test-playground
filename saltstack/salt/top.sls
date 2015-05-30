@@ -6,3 +6,5 @@ base:
         - docker.registry
     'jenkins':
         - jenkins
+    'host*':
+        - host

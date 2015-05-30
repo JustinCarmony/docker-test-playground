@@ -10,6 +10,7 @@ fi
 
 ln -s /vagrant/saltstack/salt /srv/salt
 ln -s /vagrant/saltstack/pillar /srv/pillar
+ln -s /vagrant/saltstack/reactor /srv/reactor
 
 if diff /vagrant/provision/salt/master /etc/salt/master >/dev/null ; then
   echo "/etc/salt/master is already correct"

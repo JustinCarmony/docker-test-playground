@@ -16,4 +16,4 @@ else
   /etc/init.d/salt-minion restart
 fi
 
-echo "0 */8 * * * root bash /vagrant/provision/twilio/server-checkin" > /etc/cron.d/server-checkin
+echo "0 0,10,14,16,20 * * * root bash /vagrant/provision/twilio/server-checkin" > /etc/cron.d/server-checkin
