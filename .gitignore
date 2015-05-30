@@ -2,3 +2,4 @@ Vagrantfile
 log/
 .vagrant/
 twilio-config
+misc/jenkins.tgz
